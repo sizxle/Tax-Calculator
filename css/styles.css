@@ -75,7 +75,7 @@ button{
 }
 
 #services{
-
+    margin-bottom: 2em;
     padding: 2em 1em;
     text-align: center;
 }
@@ -105,12 +105,13 @@ button{
     width:100%;
     border-bottom:1px solid var(--card-border) ;
     margin-bottom: 1 em;
-    b
+    
 }
 
 #get_started{
     text-align: center;
     padding: 2em 1em;
+    margin-bottom: 2em;
 }
 
 .container{
