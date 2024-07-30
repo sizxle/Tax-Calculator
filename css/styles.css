@@ -19,4 +19,28 @@ body{
     background-color: var(--background-color);
 }
 
-header{}
+header{
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    padding:  1rem;
+    align-items: center;
+}
+
+header ul{
+    list-style-type: none;
+    display: flex;
+    gap:1rem;
+    cursor: pointer;
+}
+
+.header_nav{
+    color: #fff;
+    text-decoration: none;
+}
+
+#intro{
+    /* color: #fff; */
+    padding: 4rem 1 rem;
+    text-align: center;
+}
