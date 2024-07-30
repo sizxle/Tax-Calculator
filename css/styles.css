@@ -44,3 +44,9 @@ header ul{
     padding: 4rem 1 rem;
     text-align: center;
 }
+
+.content{
+    max-width: 600px;
+    margin: 0 auto;
+    border: 2px solid red; /*to remove*/
+}
