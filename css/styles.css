@@ -88,4 +88,28 @@ header ul{
     margin-bottom: 1 em;
 }
 
-#get started
+#get_started{
+    border: 2px solid red;
+    text-align: center;
+    padding: 2em 1em;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+footer{
+    border: 2px solid pink;
+    text-align: center;
+    padding: 1em;
+    background-color: var(--primary-color);
+    color:#fff;
+    position:fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+
+
+/* for samller screens stack the card */
