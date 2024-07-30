@@ -60,3 +60,32 @@ header ul{
     font-size: 1.25em;
     margin-bottom: 2em;
 }
+
+#services{
+    border: 2px solid red;
+    padding: 2em 1em;
+    text-align: center;
+}
+
+#services h2{
+    font-size: 2em;
+    margin-bottom: 1.5em;
+}
+
+.card{
+    background-color: var(--card-background);
+    border: 1px solid var(--card-border);
+    padding: 1em;
+    margin: 1em;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.card img{
+    width:100%;
+    border-bottom:1px solid var(--card-border) ;
+    margin-bottom: 1 em;
+}
+
+#get started
