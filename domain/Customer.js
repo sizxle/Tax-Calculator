@@ -37,8 +37,18 @@ class Customer{
     }
 
 
+
     toString(){
         return `${this.#name}  ${this.#surname};`
+    }
+
+    addTaxInfo(taxInfo){
+        if(taxInfo instanceof TaxInfo){
+            this.#taxInfoList.push(taxInfo);
+        }
+    }
+    getTaxInfoList(){
+        return this.#taxInfoList;
     }
 
     toObject() {
