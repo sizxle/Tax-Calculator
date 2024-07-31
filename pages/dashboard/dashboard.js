@@ -1,10 +1,12 @@
 document.getElementById("taxInfoForm").addEventListener("submit", (event) => {
   event.preventDefault();
+  const customer=Customer.fromJSON(JSON.parse(localStorage.getItem("customer")));
 
   const form = document.getElementById("taxInfoForm");
   const formData = new FormData(form);
   const taxInfo = new TaxInfo();
 
+  taxInfo.setId(customer.getTaxInfoList().length);
   taxInfo.setSalary(formData.get("salary"));
   taxInfo.setBonuses(formData.get("bonuses"));
   taxInfo.setInterestReceived(formData.get("interestReceived"));
@@ -13,10 +15,19 @@ document.getElementById("taxInfoForm").addEventListener("submit", (event) => {
   taxInfo.setRetirementFunds(formData.get("retirementFunding"));
   taxInfo.setTravelAllowance(formData.get("travelAllowance"));
 
-    if(localStorage.getItem("taxInfoList")==null){
-        localStorage.setItem("taxInfoList","[]")
-    }else{
-        localStorage.getItem("taxInfoList");
-    }
-  console.log(localStorage.getItem("taxInfoList"));
+
+  customer.addTaxInfo(taxInfo);
+  localStorage.setItem("customer",JSON.stringify(customer.toObject()))
+
+  console.log(customer)
+
+  closeModal("taxInfoModal");
 });
+
+function closeModal(modalId){
+    document.getElementById(modalId).style.display="none";
+}
+
+function openModal(modalId){
+    document.getElementById(modalId).style.display="block";
+}
