@@ -3,11 +3,13 @@ class Customer{
     #name;
     #surname;
     #email;
+    #taxInfoList;
 
-    constructor(name,surname,email){
+    constructor(name,surname,email,taxInfoList=[]){
         this.#name=name;
         this.#surname=surname;
         this.#email=email;
+        this.#taxInfoList=taxInfoList;
     }
 
     getName(){
@@ -35,19 +37,30 @@ class Customer{
     }
 
 
+
     toString(){
         return `${this.#name}  ${this.#surname};`
+    }
+
+    addTaxInfo(taxInfo){
+        if(taxInfo instanceof TaxInfo){
+            this.#taxInfoList.push(taxInfo);
+        }
+    }
+    getTaxInfoList(){
+        return this.#taxInfoList;
     }
 
     toObject() {
         return {
             name: this.#name,
             surname: this.#surname,
-            email: this.#email
+            email: this.#email,
+            taxInfoList: this.#taxInfoList,
         };
     }
 
     static fromJSON(object){
-        return new Customer(object.name,object.surname,object.email);
+        return new Customer(object.name,object.surname,object.email,object.taxInfoList);
     }
 }
