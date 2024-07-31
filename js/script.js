@@ -21,12 +21,12 @@ document.getElementById("registrationForm").addEventListener("submit",(event)=>{
     localStorage.setItem("customer",JSON.stringify(customer.toObject()));
     event.preventDefault();
     closeModal("registrationModal");
+
+    window.location.href = 'pages/dashboard/dashboard.html';
 });
 
 function closeModal(modalId){
     document.getElementById(modalId).style.display="none";
-    const customer1= Customer.fromJSON( JSON.parse(localStorage.getItem("customer")));
-    console.log(customer1);
 }
 
 function openModal(modalId){
