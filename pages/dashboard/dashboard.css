@@ -129,8 +129,7 @@ footer{
 /* modal */
 
 .modal{
-    /* display: none ; */
-    border: 2px solid red;
+    display: none ;
     position: fixed;
     z-index: 99;
     left: 0;
