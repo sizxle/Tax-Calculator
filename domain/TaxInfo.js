@@ -9,8 +9,14 @@ class TaxInfo{
     #retirementFunds;
     #travelAllowance;
 
-    constructor(){
-
+    constructor(salary=0,bonuses=0,interestReceived=0,dividends=0,totalCapitalGain=0,retirementFunds=0,travelAllowance=0){
+        this.#salary=salary;
+        this.#bonuses=bonuses;
+        this.interestReceived=interestReceived;
+        this.#dividends=dividends;
+        this.#totalCapitalGain=totalCapitalGain;
+        this.#retirementFunds=retirementFunds;
+        this.#travelAllowance=travelAllowance;
     }
 
     getId() {
@@ -79,6 +85,19 @@ class TaxInfo{
       toString(){
         return `${this.#salary}`;
       }
+      
+      toObject() {
+        return {
+            id: this.#id,
+            salary: this.#salary,
+            bonuses: this.#bonuses,
+            interestReceived: this.#interestReceived,
+            dividends: this.#dividends,
+            totalCapitalGain: this.#totalCapitalGain,
+            retirementFunds: this.#retirementFunds,
+            travelAllowance: this.#travelAllowance,
+        };
+    }
 
 
 }
