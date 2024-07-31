@@ -15,7 +15,8 @@ document.getElementById("taxInfoForm").addEventListener("submit", (event) => {
 
     if(localStorage.getItem("taxInfoList")==null){
         localStorage.setItem("taxInfoList","[]")
-
+    }else{
+        localStorage.getItem("taxInfoList");
     }
   console.log(localStorage.getItem("taxInfoList"));
 });
