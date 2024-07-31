@@ -25,8 +25,8 @@ document.getElementById("registrationForm").addEventListener("submit",(event)=>{
 
 function closeModal(modalId){
     document.getElementById(modalId).style.display="none";
-    const customer1= Customer.fromJSON( JSON.parse(localStorage.getItem("customer")));
-    console.log(customer1);
+    // const customer1= Customer.fromJSON( JSON.parse(localStorage.getItem("customer")));
+    // console.log(customer1);
 }
 
 function openModal(modalId){
