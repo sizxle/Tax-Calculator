@@ -51,6 +51,10 @@ class Customer{
         return this.#taxInfoList;
     }
 
+    getTaxInfo(id){
+        return this.#taxInfoList[id];
+    }
+
     toObject() {
         return {
             name: this.#name,
