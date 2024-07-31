@@ -56,11 +56,12 @@ class Customer{
             name: this.#name,
             surname: this.#surname,
             email: this.#email,
-            taxInfoList: this.#taxInfoList,
+            taxInfoList: this.#taxInfoList.map(taxInfo=> taxInfo.toObject()),
         };
     }
 
     static fromJSON(object){
-        return new Customer(object.name,object.surname,object.email,object.taxInfoList);
+        const taxInfoList = object.taxInfoList.map(ti => new TaxInfo(ti.salary,ti.bonuses,ti.interestReceived,ti.dividends,ti.totalCapitalGain,ti.retirementFunds,ti.travelAllowance));
+        return new Customer(object.name,object.surname,object.email,taxInfoList);
     }
 }
