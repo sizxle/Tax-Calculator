@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="dashboard.css">
+    </head>
+
+    <body>
+        <header>
+            <div class="header_logo">
+                <p>PsyberTax</p>
+            </div>
+            <nav class=" header_nav">
+                <ul>
+                    <li><a>DashBoard</a></li>
+                    <li><a>Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="welcome">
+                <div id="content">
+                    <h2> Welcome, <div id="customerName"></div> To Your <span>Dashboard</span></h2>
+                </div>
+            </section>
+            <section id="calculations">
+                <div>
+                    <button>Create Tax Calculation</button>
+                </div>
+                <div id="list_of_calculation"></div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Tax Calculator. All rights reserved.</p>
+        </footer>
+
+
+        <div id="taxInfoModal" class="modal">
+            <div class="modal_body">
+                <span class="close" onclick="closeModal('taxInfoModal')"> &times;</span>
+                <h2>Tax Information</h2>
+                <form id="taxInfoForm">
+                    <div>tax year info</div>
+                    <div class="container">
+                        <div>
+                            <h3>Income</h3>
+                            <div class="form_group">
+                                <label for="salary">Annual Salary:</label>
+                                <input id="salary" type="number" name="salary"/>
+                           
+                                <label for="bonus">Bonuses:</label>
+                                <input id="bonus" type="number" name="bonuses"/>
+                        
+                                <label for="interest">Interest Received:</label>
+                                <input id="interest" type="number" name="interestReceived"/>
+                          
+                                <label for="dividends">Dividends:</label>
+                                <input id="dividends" type="number" name="dividends"/>
+                           
+                                <label for="totalCapitalGain">Total Capital Gain:</label>
+                                <input id="totalCapitalGain" type="number" name="totalCapitalGain"/>
+                            </div>
+                        </div>
+                        <div>
+                          <h3>Expense</h3>
+                          <div class="form_group">
+                            <label for="retirementFunding">Retirement Funding:</label>
+                            <input id="retirementFunding" type="number" name="retirementFunding"/>
+                            <label for="travelAllowance">Travel Allowance:</label>
+                            <input id="travelAllowance" type="number" name="travelAllowance"/>
+                          </div>
+    
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit">Calculate</button>
+                        <button type="button">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </body>
+    <script src="dashboard.js"></script>
+    <script src="../../domain/TaxInfo.js"></script>
+</html>
