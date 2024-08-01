@@ -12,7 +12,6 @@ window.onload = (event) => {
 
   if(calculationList && calculationList.length>0){
     calculationList.forEach(item=>{
-      console.log(item)
       const listItem= document.createElement('li');
       listItem.textContent=item.id;
       listItem.classList.add('card');
