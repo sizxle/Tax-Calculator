@@ -1,0 +1,184 @@
+:root {
+    --primary-color: #2358F7;
+    --secondary-color: #59B13E;
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --card-background: #fff;
+    --card-border: #ddd;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    align-items: center;
+}
+
+header ul{
+    list-style-type: none;
+    display: flex;
+    gap:1rem;
+    cursor: pointer;
+    
+}
+
+.header_nav{
+    
+    text-decoration: none;
+}
+
+.header_logo img{
+    width:30%;
+}
+
+
+h2 span{
+    color:var(--primary-color);
+}
+
+button{
+    margin-top: 1em;
+    background-color: var(--primary-color);
+    color:var(--background-color);
+    font-size: 1em;
+    padding: 1em 2em;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#main-screen{
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 1rem 2rem;
+}
+
+#calculation-card{
+    border: 2px solid blue;
+    width: 100%;
+}
+
+#summary{
+    border: 2px solid blue;
+}
+
+#welcome{
+    padding: 1rem 2rem;
+    margin-top: 1em;
+}
+
+
+
+#calculations{
+    margin-bottom: 2em;
+    padding: 2em 1em;
+    text-align: center;
+    border: 2px solid red;
+}
+
+#calculations h2{
+    font-size: 2em;
+    margin-bottom: 1.5em;
+    color: var(--text-color);
+}
+
+
+
+footer{
+    border: 2px solid pink;
+    text-align: center;
+    padding: 1em;
+    background-color: var(--primary-color);
+    color:#fff;
+    position:fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 10px;
+}
+
+
+#logo{
+    width: 3em;
+}
+
+#empty-message{
+    display: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.card{
+    background-color: var(--card-background);
+    border: 1px solid var(--card-border);
+    padding: 1em;
+    margin: 1em auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px black;
+    text-align: left;
+    max-width: 400px;
+}
+
+.card:hover{
+    box-shadow: 0 2px 4px var(--secondary-color);
+}
+
+
+
+/* for samller screens stack the card */
+
+
+.form-group {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 5px;
+}
+
+#taxInfoForm h3{
+    margin: 0.5em auto;
+    margin-bottom: 0.25em;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group select{
+    border-radius: 5px;
+    width: 50%;
+    padding: 0.2rem;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px black;
+}
+
+.form-group input {
+    width: 50%;
+    padding: 0.2rem;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px gray;
+}
+
+
+

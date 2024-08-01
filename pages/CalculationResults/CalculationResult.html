@@ -1,15 +1,109 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width" />
-        <title>Results 4 NOw</title>
-        <link rel="stylesheet" href="CalculationResults.css"/>
-    </head>
-    <body>
-        <p>here</p>
-    </body>
-    <script src="CalculationResults.js"></script>
-    <script src="../../domain/Customer.js"></script>
-    <script src="../../domain/TaxInfo.js"></script>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Results 4 NOw</title>
+    <link rel="stylesheet" href="CalculationResults.css" />
+</head>
+
+<body>
+    <header>
+        <div class="header_logo">
+            <img src="../../assets/images/Screenshot 2024-08-01 105631.png" />
+        </div>
+        <nav class=" header_nav">
+            <ul>
+                <li><a>Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="welcome">
+            <h2>Tax Calculator</h2>
+        </section>
+        <section id="main-screen">
+            <div id="tax-info" class="container">
+                <form id="taxInfoForm">
+                    <h3>Tax Information</h3>
+                    <div class="form-group">
+                        <div>
+                            <label for="taxYear">Tax Year</label>
+                            <select id="taxYear">
+                                <option value="2023">2023-2024</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="taxPaid">Tax</label>
+                            <input id="taxPaid" type="number" name="taxPaid">
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Income</h3>
+                        <div class="form-group">
+                            <div>
+                                <label for="salary">Annual Salary</label>
+                                <input id="salary" type="number" name="salary" />
+                            </div>
+                            <div>
+                                <label for="bonus">Bonuses</label>
+                                <input id="bonus" type="number" name="bonuses" />
+                            </div>
+                            <div>
+                                <label for="interest">Interest Received</label>
+                                <input id="interest" type="number" name="interestReceived" />
+                            </div>
+                            <div>
+                                <label for="dividends">Dividends</label>
+                                <input id="dividends" type="number" name="dividends" />
+                            </div>
+                            <div>
+                                <label for="totalCapitalGain">Total Capital Gain</label>
+                                <input id="totalCapitalGain" type="number" name="totalCapitalGain" />
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Expense</h3>
+                        <div class="form-group">
+                            <div>
+                                <label for="retirementFunding">Retirement Funding</label>
+                                <input id="retirementFunding" type="number" name="retirementFunding" />
+                            </div>
+                            <div>
+                                <label for="travelAllowance">Travel Allowance</label>
+                                <input id="travelAllowance" type="number" name="travelAllowance" />
+                            </div>
+                            <div>
+                                <label for="medicalDependencies">Medical Dependencies</label>
+                                <input id="medicalDependencies" type="number" name="medicalDependencies" />
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div>
+                        <button type="submit">Calculate</button>
+                        <button type="button">Save</button>
+                    </div>
+                </form>
+            </div>
+            <div id="summary">
+                <p id="no-data-message">No Summary Available</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Tax Calculator. All rights reserved.</p>
+    </footer>
+
+</body>
+<script src="CalculationResults.js"></script>
+<script src="../../domain/Customer.js"></script>
+<script src="../../domain/TaxInfo.js"></script>
+<script src="../../domain/TaxCalculator.js"></script>
+<script src="../../domain/TaxYear2023.js"></script>
+
 </html>
