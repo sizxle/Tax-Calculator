@@ -1,6 +1,7 @@
 class TaxInfo{
 
     #id
+    #taxYear
     #salary;
     #bonuses;
     #interestReceived;
@@ -11,16 +12,17 @@ class TaxInfo{
     #dependents;
     #taxPaid;
 
-    constructor(salary=0,bonuses=0,interestReceived=0,dividends=0,totalCapitalGain=0,retirementFunds=0,travelAllowance=0,dependents=0,taxPaid=0){
-        this.#salary=salary;
-        this.#bonuses=bonuses;
-        this.#interestReceived=interestReceived;
-        this.#dividends=dividends;
-        this.#totalCapitalGain=totalCapitalGain;
-        this.#retirementFunds=retirementFunds;
-        this.#travelAllowance=travelAllowance;
-        this.#dependents=dependents;
-        this.#taxPaid=taxPaid;
+    constructor(taxYear,salary=0,bonuses=0,interestReceived=0,dividends=0,totalCapitalGain=0,retirementFunds=0,travelAllowance=0,dependents=0,taxPaid=0){
+      this.#taxYear=taxYear;
+      this.#salary=salary;
+      this.#bonuses=bonuses;
+      this.#interestReceived=interestReceived;
+      this.#dividends=dividends;
+      this.#totalCapitalGain=totalCapitalGain;
+      this.#retirementFunds=retirementFunds;
+      this.#travelAllowance=travelAllowance;
+      this.#dependents=dependents;
+      this.#taxPaid=taxPaid;
     }
 
     getId() {
@@ -118,7 +120,6 @@ class TaxInfo{
             retirementFunds: this.#retirementFunds,
             travelAllowance: this.#travelAllowance,
         };
-    }
-
+    }                                                                                                                                                                                 
 
 }
