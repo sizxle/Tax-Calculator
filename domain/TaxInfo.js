@@ -1,6 +1,7 @@
 class TaxInfo{
 
     #id
+    #taxYear
     #salary;
     #bonuses;
     #interestReceived;
