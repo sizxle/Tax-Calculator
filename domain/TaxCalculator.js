@@ -24,8 +24,6 @@ class TaxCalculator{
         this.calculateTotalTaxableIncome();
         this.calculateTotalExpense();
         this.#amountToBeTaxed=this.#totalTaxableIncome-this.#totalExpense;
-        console.log(this.#totalTaxableIncome);
-        console.log(this.#totalExpense);
         console.log(this.#amountToBeTaxed)
         this.calculateTaxPayable(this.#amountToBeTaxed);
         console.log(this.#taxPayable)
@@ -97,6 +95,53 @@ class TaxCalculator{
         }
     }
 
+     get taxInfo() {
+        return this.#taxInfo;
+    }
 
+    get totalTaxableIncome() {
+        return this.#totalTaxableIncome;
+    }
+
+    get taxableInterest() {
+        return this.#taxableInterest;
+    }
+
+    get taxableDividends() {
+        return this.#taxableDividends;
+    }
+
+
+    get taxableCapitalGain() {
+        return this.#taxableCapitalGain;
+    }
+
+    get totalExpense() {
+        return this.#totalExpense;
+    }
+
+    get amountToBeTaxed() {
+        return this.#amountToBeTaxed;
+    }
+
+    get taxPayable() {
+        return this.#taxPayable;
+    }
+
+    get medicalCredit() {
+        return this.#medicalCredit;
+    }
+
+    get finalTaxPayable() {
+        return this.#finalTaxPayable;
+    }
+
+    get deductibleTravel() {
+        return this.#deductibleTravel;
+    }
+
+    get deductibleRetirementFunds() {
+        return this.#deductibleRetirementFunds;
+    }
 
 }
