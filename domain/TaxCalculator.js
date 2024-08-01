@@ -10,8 +10,10 @@ class TaxCalculator{
     #taxPayable;
     #medicalCredit;
     #finalTaxPayable;
+    #netTaxPayable;
     #deductibleTravel;
     #deductibleRetirementFunds;
+    #rebate;
 
     constructor(taxInfo){
         if(taxInfo instanceof TaxInfo){
@@ -24,10 +26,8 @@ class TaxCalculator{
         this.calculateTotalTaxableIncome();
         this.calculateTotalExpense();
         this.#amountToBeTaxed=this.#totalTaxableIncome-this.#totalExpense;
-        console.log(this.#amountToBeTaxed)
         this.calculateTaxPayable(this.#amountToBeTaxed);
-        console.log(this.#taxPayable)
-        
+        this.calculateNetTaxPayable();
         this.calculateFinalTaxPayable();
         // console.log(this.#finalTaxPayable);
         
@@ -66,9 +66,13 @@ class TaxCalculator{
         this.#medicalCredit=TaxYear2023.calculateMedicalCredits(dependents);
     }
 
-    calculateFinalTaxPayable(){
+    calculateNetTaxPayable(){
         this.calculateMedicalCredits(Number(this.#taxInfo.getDependents()));
-        this.#finalTaxPayable=this.#taxPayable-this.#medicalCredit-TaxYear2023.PRIMARY_REBATE-Number(this.#taxInfo.getTaxPaid());
+        this.#netTaxPayable=this.#taxPayable-this.#medicalCredit-TaxYear2023.PRIMARY_REBATE;
+    }
+
+    calculateFinalTaxPayable(){
+        this.#finalTaxPayable=this.#netTaxPayable-Number(this.#taxInfo.getTaxPaid());
     }
 
     calculateTotalTaxableIncome(){
@@ -136,12 +140,21 @@ class TaxCalculator{
         return this.#finalTaxPayable;
     }
 
+    get netTaxPayable() {
+        return this.#netTaxPayable;
+    }
+
     get deductibleTravel() {
         return this.#deductibleTravel;
     }
 
     get deductibleRetirementFunds() {
         return this.#deductibleRetirementFunds;
+    }
+
+    get rebate() {
+        this.#rebate=TaxYear2023.PRIMARY_REBATE;
+        return this.#rebate;
     }
 
 }
