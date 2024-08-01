@@ -74,7 +74,19 @@ button{
 
 #summary{
     border: 2px solid blue;
+    display: none;
 }
+
+.card{
+    background-color: var(--card-background);
+    border: 1px solid var(--card-border);
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px black;
+    text-align: left;
+}
+
+
 
 #welcome{
     padding: 1rem 2rem;
@@ -121,20 +133,8 @@ ul{
     list-style: none;
 }
 
-.card{
-    background-color: var(--card-background);
-    border: 1px solid var(--card-border);
-    padding: 1em;
-    margin: 1em auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px black;
-    text-align: left;
-    max-width: 400px;
-}
 
-.card:hover{
-    box-shadow: 0 2px 4px var(--secondary-color);
-}
+
 
 
 
@@ -173,5 +173,25 @@ ul{
     box-shadow: 0 2px 4px gray;
 }
 
+.summary-data-container{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
 
+.description {
+    flex: 1;
+    font-weight: bold;
+}
 
+.icon {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .value {
+    flex: 1;
+    text-align: right;
+  }

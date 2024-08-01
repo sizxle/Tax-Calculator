@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Results 4 NOw</title>
+    <title>TaxCalculations</title>
     <link rel="stylesheet" href="CalculationResults.css" />
 </head>
 
@@ -90,8 +90,47 @@
                     </div>
                 </form>
             </div>
-            <div id="summary">
-                <p id="no-data-message">No Summary Available</p>
+            <div id="summary" class="card">
+                <div class="summary-data-container">
+                    <div class="icon" style="background-color: purple;"></div>
+                    <div class="description">Total Income</div>
+                    <div class="value"><p id="total-income"></p></div>
+                </div>
+                <div class="summary-data-container">
+                    <div class="icon" style="background-color: purple;"></div>
+                    <div class="description">Total Expense</div>
+                    <div class="value"><p id="total-expense-deductible"></p></div>
+                </div>
+                <div class="summary-data-container">
+                    <div class="icon" style="background-color: purple;"></div>
+                    <div class="description">Taxable Income</div>
+                    <div class="value"><p id="taxable-income"></p></div>
+                </div>
+                <div class="summary-data-container">
+                    <div class="icon" style="background-color: purple;"></div>
+                    <div class="description">Tax Payable</div>
+                    <div class="value"><p id="tax-payable"></p></div>
+                </div>
+                <div class="summary-data-container">
+                    <div class="icon" style="background-color: purple;"></div>
+                    <div class="description">Medical Credits</div>
+                    <div class="value"><p id="medical-credit"></p></div>
+                </div>
+                <div class="summary-data-container">
+                    <div class="icon" style="background-color: purple;"></div>
+                    <div class="description">Primary Rebate</div>
+                    <div class="value"><p id="rebate"></p></div>
+                </div>
+                <div class="summary-data-container">
+                    <div class="icon" style="background-color: purple;"></div>
+                    <div class="description">Nett Payable</div>
+                    <div class="value"><p id="nett-payable"></p></div>
+                </div>
+                <div class="summary-data-container">
+                    <div class="icon" style="background-color: purple;"></div>
+                    <div class="description">Final Payable</div>
+                    <div class="value"><p id="final-payable"></p></div>
+                </div>
             </div>
         </section>
     </main>
