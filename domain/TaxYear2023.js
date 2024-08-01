@@ -50,7 +50,6 @@ class TaxYear2023 {
     let band = this.determineBand(amount);
     switch (7) {
       case 7:
-        console.log(amount-this.BAND_6);
         results += (amount - this.BAND_6) * this.RATE_BAND_7;
         amount = this.BAND_6;
       case 6:
@@ -71,7 +70,6 @@ class TaxYear2023 {
       case 1:
         results += amount * this.RATE_BAND_1;
     }
-    console.log(results);
     return Number(results);
   }
 
