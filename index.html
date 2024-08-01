@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Tax Calculator</title>
 </head>
 
@@ -12,55 +12,28 @@
 
     <header>
         <div class="header_logo">
-            <p>PsyberTax</p>
+            <img src="assets/images/Screenshot 2024-08-01 105631.png" />
         </div>
         <nav class=" header_nav">
             <ul>
-                <li><a>Services</a></li>
-                <li><a>About</a></li>
-                <li><a>Contact</a></li>
+                <li><a onclick="openModal('registrationModal')">Register</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="intro">
-            <div class="content">
-                <h1>Welcome to the <span>Tax Calculator</span></h1>
-                <p>Effortlessly calculate your taxes with our user-friendly tool.</p>
-                <button onclick="openModal('registrationModal')">Get Started</button>
-            </div>
-        </section>
-        <section id="services">
-            <h2>Our Services</h2>
+        <section id="homescreen">
             <div class="container">
-                <div class="card">
-                    <img src="assets/images/a-sleek-and-modern-bank-website-interface-showcasi.png" />
-                    <h3>Accurate Calculations</h3>
-                    <p>Get precise tax calculations based on the latest tax regulations.</p>
+                <div class="content">
+                    <h1>Welcome to the <span>PsyberTax Calculator</span></h1>
+                    <p>Effortlessly calculate your taxes with our user-friendly tool.</p>
+                    <button onclick="openModal('registrationModal')">Get Started</button>
                 </div>
-                <div class="card">
-                    <img src="assets/images/a-close-up-of-a-hand-smoothly-interacting-with-a-m.png" />
-                    <h3>Easy to Use</h3>
-                    <p>Our tool is designed to be simple and intuitive, ensuring a smooth user experience.</p>
-                </div>
-                <div class="card ">
-                    <img src="assets/images/a-friendly-tax-advisor-behind-a-secure-digital-bar.png" />
-                    <h3>Secure and Private</h3>
-                    <p>Your data is safe with us. We prioritize your privacy and security.</p>
+                <div>
+                    <img src="assets/images/hScreen.svg" />
                 </div>
             </div>
-
         </section>
-
-        <section id="get_started">
-            <button onclick="openModal('registerModal')">Get Started</button>
-        </section>
-
-
-
-
-
     </main>
 
     <footer>
@@ -87,7 +60,7 @@
                     <input id="email" type="email" name="email">
                 </div>
                 <div class="form_group">
-                    <button type="button" onclick="closeModal('registrationModal')">Cancel</button>
+                    <button class="danger" type="button" onclick="closeModal('registrationModal')">Cancel</button>
                     <button type="submit">Register</button>
                 </div>
             </form>
@@ -97,7 +70,7 @@
 
 
 </body>
-<script src="js/script.js"></script>
+<script src="script.js"></script>
 <script src="domain/Customer.js"></script>
 
 </html>

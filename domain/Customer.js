@@ -51,16 +51,27 @@ class Customer{
         return this.#taxInfoList;
     }
 
+    getTaxInfo(id){
+        return new TaxInfo(this.#taxInfoList[id].salary,
+            this.#taxInfoList[id].bonuses,
+            this.#taxInfoList[id].interestReceived,
+            this.#taxInfoList[id].dividends,
+            this.#taxInfoList[id].totalCapitalGain,
+            this.#taxInfoList[id].retirementFunds,
+            this.#taxInfoList[id].travelAllowance);
+    }
+
     toObject() {
         return {
             name: this.#name,
             surname: this.#surname,
             email: this.#email,
-            taxInfoList: this.#taxInfoList,
+            taxInfoList: this.#taxInfoList.map(taxInfo=> taxInfo.toObject()),
         };
     }
 
     static fromJSON(object){
+        // const taxInfoList = object.taxInfoList.map(ti => new TaxInfo(ti.salary,ti.bonuses,ti.interestReceived,ti.dividends,ti.totalCapitalGain,ti.retirementFunds,ti.travelAllowance));
         return new Customer(object.name,object.surname,object.email,object.taxInfoList);
     }
 }

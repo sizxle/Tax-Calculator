@@ -8,9 +8,19 @@ class TaxInfo{
     #totalCapitalGain;
     #retirementFunds;
     #travelAllowance;
+    #dependents;
+    #taxPaid;
 
-    constructor(){
-
+    constructor(salary=0,bonuses=0,interestReceived=0,dividends=0,totalCapitalGain=0,retirementFunds=0,travelAllowance=0,dependents=0,taxPaid=0){
+        this.#salary=salary;
+        this.#bonuses=bonuses;
+        this.#interestReceived=interestReceived;
+        this.#dividends=dividends;
+        this.#totalCapitalGain=totalCapitalGain;
+        this.#retirementFunds=retirementFunds;
+        this.#travelAllowance=travelAllowance;
+        this.#dependents=dependents;
+        this.#taxPaid=taxPaid;
     }
 
     getId() {
@@ -28,6 +38,23 @@ class TaxInfo{
       setSalary(salary) {
         this.#salary = salary;
       }
+
+      getDependents() {
+        return this.#dependents;
+      }
+    
+      setDependents(dependents) {
+        this.#dependents = dependents;
+      }
+
+      getTaxPaid() {
+        return this.#taxPaid;
+      }
+    
+      setTaxPaid(taxPaid) {
+        this.#taxPaid = taxPaid;
+      }
+    
     
       getBonuses() {
         return this.#bonuses;
@@ -79,6 +106,19 @@ class TaxInfo{
       toString(){
         return `${this.#salary}`;
       }
+      
+      toObject() {
+        return {
+            id: this.#id,
+            salary: this.#salary,
+            bonuses: this.#bonuses,
+            interestReceived: this.#interestReceived,
+            dividends: this.#dividends,
+            totalCapitalGain: this.#totalCapitalGain,
+            retirementFunds: this.#retirementFunds,
+            travelAllowance: this.#travelAllowance,
+        };
+    }
 
 
 }
