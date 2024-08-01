@@ -52,7 +52,13 @@ class Customer{
     }
 
     getTaxInfo(id){
-        return this.#taxInfoList[id];
+        return new TaxInfo(this.#taxInfoList[id].salary,
+            this.#taxInfoList[id].bonuses,
+            this.#taxInfoList[id].interestReceived,
+            this.#taxInfoList[id].dividends,
+            this.#taxInfoList[id].totalCapitalGain,
+            this.#taxInfoList[id].retirementFunds,
+            this.#taxInfoList[id].travelAllowance);
     }
 
     toObject() {
@@ -65,7 +71,7 @@ class Customer{
     }
 
     static fromJSON(object){
-        const taxInfoList = object.taxInfoList.map(ti => new TaxInfo(ti.salary,ti.bonuses,ti.interestReceived,ti.dividends,ti.totalCapitalGain,ti.retirementFunds,ti.travelAllowance));
-        return new Customer(object.name,object.surname,object.email,taxInfoList);
+        // const taxInfoList = object.taxInfoList.map(ti => new TaxInfo(ti.salary,ti.bonuses,ti.interestReceived,ti.dividends,ti.totalCapitalGain,ti.retirementFunds,ti.travelAllowance));
+        return new Customer(object.name,object.surname,object.email,object.taxInfoList);
     }
 }
