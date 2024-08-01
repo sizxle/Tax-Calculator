@@ -4,7 +4,7 @@ window.onload = (event) => {
   const customer= Customer.fromJSON(JSON.parse(localStorage.getItem("customer")));
 
   document.getElementById("customerName").innerText=customer.getName() +" "+ customer.getSurname();
- 
+  
   const itemList=document.getElementById('item-list');
   const emptyMessage=document.getElementById('empty-message');
 
