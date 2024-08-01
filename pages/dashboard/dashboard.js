@@ -1,28 +1,34 @@
-document.getElementById("taxInfoForm").addEventListener("submit", (event) => {
+
+
+window.onload = (event) => {
+  const customer= Customer.fromJSON(JSON.parse(localStorage.getItem("customer")));
+
+  document.getElementById("customerName").innerText=customer.getName() +" "+ customer.getSurname();
+ 
+  const itemList=document.getElementById('item-list');
+  const emptyMessage=document.getElementById('empty-message');
+
+  const calculationList=customer.getTaxInfoList();
+
+  if(calculationList && calculationList.length>0){
+    calculationList.forEach(item=>{
+      console.log(item)
+      const listItem= document.createElement('li');
+      listItem.textContent=item.id;
+      listItem.classList.add('card');
+      itemList.appendChild(listItem);
+    })
+  }else{
+    emptyMessage.style.display='block';
+  }
+};
+
+document.getElementById("create-calculation").addEventListener("click",event=>{
+
   event.preventDefault();
-  const customer=Customer.fromJSON(JSON.parse(localStorage.getItem("customer")));
+  window.location.href = '../CalculationResults/CalculationResult.html';
+})
 
-  const form = document.getElementById("taxInfoForm");
-  const formData = new FormData(form);
-  const taxInfo = new TaxInfo();
-
-  taxInfo.setId(customer.getTaxInfoList().length);
-  taxInfo.setSalary(formData.get("salary"));
-  taxInfo.setBonuses(formData.get("bonuses"));
-  taxInfo.setInterestReceived(formData.get("interestReceived"));
-  taxInfo.setDividends(formData.get("dividends"));
-  taxInfo.setTotalCapitalGain(formData.get("totalCapitalGain"));
-  taxInfo.setRetirementFunds(formData.get("retirementFunding"));
-  taxInfo.setTravelAllowance(formData.get("travelAllowance"));
-
-
-  customer.addTaxInfo(taxInfo);
-  localStorage.setItem("customer",JSON.stringify(customer.toObject()))
-
-  console.log(customer)
-
-  closeModal("taxInfoModal");
-});
 
 function closeModal(modalId){
     document.getElementById(modalId).style.display="none";
