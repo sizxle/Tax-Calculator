@@ -82,12 +82,7 @@ button{
 
 
 
-#calculations{
-    margin-bottom: 2em;
-    padding: 2em 1em;
-    text-align: center;
-    border: 2px solid red;
-}
+
 
 #calculations h2{
     font-size: 2em;
@@ -98,7 +93,6 @@ button{
 
 
 footer{
-    border: 2px solid pink;
     text-align: center;
     padding: 1em;
     background-color: var(--primary-color);
