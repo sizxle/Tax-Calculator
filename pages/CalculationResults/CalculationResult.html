@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Results 4 NOw</title>
+    <title>TaxCalculations</title>
     <link rel="stylesheet" href="CalculationResults.css" />
 </head>
 
@@ -15,7 +15,7 @@
         </div>
         <nav class=" header_nav">
             <ul>
-                <li><a>Dashboard</a></li>
+                <li><a  href="#" onclick="navigateToDashboard()">Dashboard</a></li>
             </ul>
         </nav>
     </header>
@@ -30,12 +30,12 @@
                     <div class="form-group">
                         <div>
                             <label for="taxYear">Tax Year</label>
-                            <select id="taxYear">
-                                <option value="2023">2023-2024</option>
+                            <select id="taxYear" name="taxYear">
+                                <option value="2023-2024">2023-2024</option>
                             </select>
                         </div>
                         <div>
-                            <label for="taxPaid">Tax</label>
+                            <label for="taxPaid">Tax Already Paid(as per IRP5)</label>
                             <input id="taxPaid" type="number" name="taxPaid">
                         </div>
                     </div>
@@ -86,12 +86,80 @@
                     </div>
                     <div>
                         <button type="submit">Calculate</button>
-                        <button type="button">Save</button>
+                        <button id="save-btn" type="button">Save</button>
                     </div>
                 </form>
             </div>
-            <div id="summary">
-                <p id="no-data-message">No Summary Available</p>
+            <div id="summary" class="card">
+                <div class="content">
+                    <h2>Tax Breakdown</h2>
+                    <p>Your <span id="tax-year"></span> taxes based on the assessed value of R<span
+                            class="important-value" id="income-total"></span> are:</p>
+                </div>
+                <div>
+                    <div id="progress-bar">
+                        <div id="progress-bar-income"></div>
+                        <div id="progress-bar-expanse"></div>
+                    </div>
+                </div>
+                <div class="container-summary">
+                    <div class="summary-data-container">
+                        <div class="icon" style="background-color: yellow;"></div>
+                        <div class="description">Total Income</div>
+                        <div class="value">
+                            <p>R<span id="total-income"></span></p>
+                        </div>
+                    </div>
+                    <div class="summary-data-container">
+                        <div class="icon" style="background-color: purple;"></div>
+                        <div class="description">Total Expense</div>
+                        <div class="value ">
+                            <p>R<span id="total-expense-deductible"></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary-explained">
+                    <div class="spacing">
+                        <p>Your Taxable Income is R<span class="important-value" id="taxable-income"></span></p>
+                    </div>
+                </div>
+                <div class="summary-explained">
+                    <div class="spacing">
+                        <p>Tax Payable according to <a>Tax Table</a> R<span class="important-value"
+                                id="tax-payable"></span></p>
+                    </div>
+                </div>
+                <div class="container-summary">
+                    <div class="summary-data-container">
+                        <div class="icon" style="background-color: greenyellow;"></div>
+                        <div class="description">Medical Credits</div>
+                        <div class="value">
+                            <p>R<span id="medical-credit"></span></p>
+                        </div>
+                    </div>
+                    <div class="summary-data-container">
+                        <div class="icon" style="background-color: greenyellow;"></div>
+                        <div class="description">Primary Rebate</div>
+                        <div class="value">
+                            <p>R<span id="rebate"></span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-explained">
+                    <div class="spacing">
+                        <p>Your Nett Payable Tax R<span class="important-value" id="nett-payable"></span></p>
+                    </div>
+                </div>
+                <div class="summary-explained">
+                    <div class="spacing">
+                        <p>Tax Already Paid R<span class="important-value" id="tax-paid"></span></p>
+                    </div>
+                </div>
+                <div >
+                    <div class="spacing important-value"><p> <span id="final-payable"></span></p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

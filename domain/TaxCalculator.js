@@ -10,8 +10,10 @@ class TaxCalculator{
     #taxPayable;
     #medicalCredit;
     #finalTaxPayable;
+    #netTaxPayable;
     #deductibleTravel;
     #deductibleRetirementFunds;
+    #rebate;
 
     constructor(taxInfo){
         if(taxInfo instanceof TaxInfo){
@@ -24,12 +26,8 @@ class TaxCalculator{
         this.calculateTotalTaxableIncome();
         this.calculateTotalExpense();
         this.#amountToBeTaxed=this.#totalTaxableIncome-this.#totalExpense;
-        console.log(this.#totalTaxableIncome);
-        console.log(this.#totalExpense);
-        console.log(this.#amountToBeTaxed)
         this.calculateTaxPayable(this.#amountToBeTaxed);
-        console.log(this.#taxPayable)
-        
+        this.calculateNetTaxPayable();
         this.calculateFinalTaxPayable();
         // console.log(this.#finalTaxPayable);
         
@@ -68,9 +66,13 @@ class TaxCalculator{
         this.#medicalCredit=TaxYear2023.calculateMedicalCredits(dependents);
     }
 
-    calculateFinalTaxPayable(){
+    calculateNetTaxPayable(){
         this.calculateMedicalCredits(Number(this.#taxInfo.getDependents()));
-        this.#finalTaxPayable=this.#taxPayable-this.#medicalCredit-TaxYear2023.PRIMARY_REBATE-Number(this.#taxInfo.getTaxPaid());
+        this.#netTaxPayable=this.#taxPayable-this.#medicalCredit-TaxYear2023.PRIMARY_REBATE;
+    }
+
+    calculateFinalTaxPayable(){
+        this.#finalTaxPayable=this.#netTaxPayable-Number(this.#taxInfo.getTaxPaid());
     }
 
     calculateTotalTaxableIncome(){
@@ -97,6 +99,62 @@ class TaxCalculator{
         }
     }
 
+     get taxInfo() {
+        return this.#taxInfo;
+    }
 
+    get totalTaxableIncome() {
+        return this.#totalTaxableIncome;
+    }
+
+    get taxableInterest() {
+        return this.#taxableInterest;
+    }
+
+    get taxableDividends() {
+        return this.#taxableDividends;
+    }
+
+
+    get taxableCapitalGain() {
+        return this.#taxableCapitalGain;
+    }
+
+    get totalExpense() {
+        return this.#totalExpense;
+    }
+
+    get amountToBeTaxed() {
+        return this.#amountToBeTaxed;
+    }
+
+    get taxPayable() {
+        return this.#taxPayable;
+    }
+
+    get medicalCredit() {
+        return this.#medicalCredit;
+    }
+
+    get finalTaxPayable() {
+        return this.#finalTaxPayable;
+    }
+
+    get netTaxPayable() {
+        return this.#netTaxPayable;
+    }
+
+    get deductibleTravel() {
+        return this.#deductibleTravel;
+    }
+
+    get deductibleRetirementFunds() {
+        return this.#deductibleRetirementFunds;
+    }
+
+    get rebate() {
+        this.#rebate=TaxYear2023.PRIMARY_REBATE;
+        return this.#rebate;
+    }
 
 }

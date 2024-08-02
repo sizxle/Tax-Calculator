@@ -52,13 +52,17 @@ class Customer{
     }
 
     getTaxInfo(id){
-        return new TaxInfo(this.#taxInfoList[id].salary,
+        return new TaxInfo(this.#taxInfoList[id].taxYear,
+            this.#taxInfoList[id].id,
+            this.#taxInfoList[id].salary,
             this.#taxInfoList[id].bonuses,
             this.#taxInfoList[id].interestReceived,
             this.#taxInfoList[id].dividends,
             this.#taxInfoList[id].totalCapitalGain,
             this.#taxInfoList[id].retirementFunds,
-            this.#taxInfoList[id].travelAllowance);
+            this.#taxInfoList[id].travelAllowance,
+            this.#taxInfoList[id].dependents,
+            this.#taxInfoList[id].taxPaid);
     }
 
     toObject() {
