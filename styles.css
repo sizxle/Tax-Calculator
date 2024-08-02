@@ -92,7 +92,6 @@ button {
 }
 
 footer {
-  border: 2px solid pink;
   text-align: center;
   padding: 1em;
   background-color: var(--primary-color);
@@ -103,9 +102,6 @@ footer {
 }
 
 
-#homescreen {
-  /* border: 1px solid red; */
-}
 #homescreen img {
   width: 70%;
 }

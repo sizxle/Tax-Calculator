@@ -13,6 +13,7 @@ class TaxInfo {
 
   constructor(
     taxYear,
+    id,
     salary = 0,
     bonuses = 0,
     interestReceived = 0,
@@ -24,6 +25,7 @@ class TaxInfo {
     taxPaid = 0
   ) {
     this.#taxYear = taxYear;
+    this.#id=id;
     this.#salary = salary;
     this.#bonuses = bonuses;
     this.#interestReceived = interestReceived;
@@ -131,6 +133,7 @@ class TaxInfo {
   toObject() {
     return {
       id: this.#id,
+      taxYear:this.#taxYear,
       salary: this.#salary,
       bonuses: this.#bonuses,
       interestReceived: this.#interestReceived,

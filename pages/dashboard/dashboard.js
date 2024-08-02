@@ -12,15 +12,29 @@ window.onload = (event) => {
 
   if(calculationList && calculationList.length>0){
     calculationList.forEach(item=>{
+      console.log(item)
       const listItem= document.createElement('li');
-      listItem.textContent=item.id;
+      listItem.textContent=item.taxYear;
+      listItem.setAttribute("id","taxInfoCard");
+      listItem.setAttribute("key",item.id);
       listItem.classList.add('card');
       itemList.appendChild(listItem);
+    })
+    document.getElementById("taxInfoCard").addEventListener("click",event=>{
+      event.preventDefault;
+    
+      const item=document.getElementById("taxInfoCard");
+      const id=item.getAttribute("key")
+      localStorage.setItem("id",id);
+
+      window.location.href="../CalculationResults/CalculationResult.html"
     })
   }else{
     emptyMessage.style.display='block';
   }
 };
+
+
 
 document.getElementById("create-calculation").addEventListener("click",event=>{
 
@@ -35,4 +49,8 @@ function closeModal(modalId){
 
 function openModal(modalId){
     document.getElementById(modalId).style.display="block";
+}
+
+function logout(){
+  window.location.href="../../index.html"
 }
