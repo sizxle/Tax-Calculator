@@ -4,7 +4,19 @@ window.onload = (event) => {
   const customer= Customer.fromJSON(JSON.parse(localStorage.getItem("customer")));
 
   document.getElementById("customerName").innerText=customer.getName() +" "+ customer.getSurname();
-  
+ 
+  const showToast = localStorage.getItem("showToast");
+
+  if (showToast === "true") {
+    var toast = document.getElementById('toast');
+    toast.className = 'toast show'; 
+    setTimeout(function() {
+        toast.className = toast.className.replace('show', '');
+    }, 2000);
+    localStorage.removeItem("showToast");
+  }
+
+
   const itemList=document.getElementById('item-list');
   const emptyMessage=document.getElementById('empty-message');
 

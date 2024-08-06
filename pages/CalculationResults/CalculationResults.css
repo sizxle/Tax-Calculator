@@ -36,6 +36,26 @@ header ul {
 .header_nav {
   text-decoration: none;
 }
+.header_nav li{
+  border: 5px solid transparent;
+  padding: 1em 2em;
+  border-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  border-image-slice: 1;
+}
+.header_nav li:hover{
+  border: 5px solid transparent;
+  border-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+  border-image-slice: 1;
+}
+
+.danger{
+  background-color: var(--secondary-color);
+}
+
+li a{
+  text-decoration: none;
+  color: var(--text-color);
+}
 
 .header_logo img {
   width: 30%;
