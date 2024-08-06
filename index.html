@@ -49,15 +49,15 @@
             <form id="registrationForm">
                 <div class="form_group">
                     <label for="name">Name:</label>
-                    <input id="name" type="text" name="name" />
+                    <input id="name" type="text" name="name" required/>
                 </div>
                 <div class="form_group">
                     <label for="surname">Surname:</label>
-                    <input id="surname" type="text" name="surname">
+                    <input id="surname" type="text" name="surname" required>
                 </div>
                 <div class="form_group">
                     <label for="email">Email:</label>
-                    <input id="email" type="email" name="email">
+                    <input id="email" type="email" name="email" required>
                 </div>
                 <div class="form_group">
                     <button class="danger" type="button" onclick="closeModal('registrationModal')">Cancel</button>
@@ -67,6 +67,7 @@
         </div>
 
     </div>
+    <div id="toast" class="toast"></div>
 
 
 </body>

@@ -37,8 +37,29 @@ header ul {
   text-decoration: none;
 }
 
-.header_logo img{
-    width:30%;
+.header_nav li {
+  border: 5px solid transparent;
+  padding: 1em 2em;
+  border-image: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border-image-slice: 1;
+}
+
+.header_nav li:hover {
+  border: 5px solid transparent;
+  border-image: linear-gradient(
+    to right,
+    var(--secondary-color),
+    var(--primary-color)
+  );
+  border-image-slice: 1;
+}
+
+.header_logo img {
+  width: 30%;
 }
 
 #homescreen {
@@ -54,16 +75,22 @@ h1 span {
 
 button {
   background-color: var(--primary-color);
+  border-radius: 10px;
   color: var(--background-color);
   font-size: 1em;
-  padding: 1em 1em;
-  border-radius: 10px;
+  padding: 1em 2em;
   border: none;
   cursor: pointer;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.content button:hover {
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
 }
 
 .content {
@@ -80,7 +107,6 @@ button {
   font-size: 1.25em;
   margin-bottom: 2em;
 }
-
 
 .container {
   display: grid;
@@ -100,7 +126,6 @@ footer {
   width: 100%;
   bottom: 0;
 }
-
 
 #homescreen img {
   width: 70%;
@@ -133,9 +158,10 @@ footer {
     font-size: 1.25em;
     margin-bottom: 2em;
   }
-  .header_logo img{
-    width:60%;
-}
+  .header_logo img {
+    width: 60%;
+  }
+
 }
 
 /* modal */
@@ -160,15 +186,15 @@ footer {
   width: 80%;
   max-width: 500px;
   padding: 2em;
-  border-radius:12px ;
+  border-radius: 12px;
 
-  -webkit-border-radius:12px ;
-  -moz-border-radius:12px ;
-  -ms-border-radius:12px ;
-  -o-border-radius:12px ;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
 }
-h2{
-    margin-bottom: 1em;;
+h2 {
+  margin-bottom: 1em;
 }
 
 .close {
@@ -195,6 +221,26 @@ h2{
   box-sizing: border-box;
 }
 
-.danger{
-    background-color: var(--secondary-color);
+.danger {
+  background-color: var(--secondary-color);
+}
+
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  position: fixed;
+  z-index: 1;
+  left: 40vw;
+  top: 0px;
+  font-size: 17px;
+  padding: 1em;
+}
+
+.toast.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
