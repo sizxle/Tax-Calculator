@@ -84,6 +84,15 @@ button {
   padding: 1rem 2rem;
 }
 
+@media (max-width: 480px) {
+
+  #main-screen{
+    display: flex;
+    flex-direction: column;
+  }
+  
+}
+
 #calculation-card {
   width: 100%;
 }
